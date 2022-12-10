@@ -76,7 +76,7 @@ export default function App() {
 
          <object
             style={{ height: '700px', width: '500px' }}
-            data="src/assets/pdf-test.pdf"
+            data="./pdf-test.pdf"
             type="application/pdf"
          ></object>
       </div>
