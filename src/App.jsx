@@ -31,6 +31,7 @@ export default function App() {
                   break;
                default:
                   borderStyle = 'solid';
+                  break;
             }
 
             switch (fontStyle) {
@@ -65,7 +66,6 @@ export default function App() {
                      >
                         {Object.entries(comboboxExtras.options).map((option, index) => (
                            <option key={index} value={option[0]}>
-                              {' '}
                               {option[1]}
                            </option>
                         ))}
