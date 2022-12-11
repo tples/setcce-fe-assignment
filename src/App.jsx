@@ -53,7 +53,7 @@ export default function App() {
                      style={{
                         position: 'absolute',
                         zIndex: '999',
-                        top: `${y * 100}%`,
+                        bottom: `${y * 100}%`,
                         left: `${x * 100}%`,
 
                         width: `${width * 100}%`,
