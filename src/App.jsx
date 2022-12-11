@@ -77,7 +77,7 @@ export default function App() {
 
          <object
             style={{ height: '100vh', width: '100vw', position: 'relative' }}
-            data="./pdf-blank.pdf#view=fit"
+            data="./pdf-test.pdf#view=fit"
             type="application/pdf"
          ></object>
       </>
