@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Document, Page,pdfjs } from 'react-pdf/dist/esm/entry.vite';
-import Test from './components/test';
 
 export default function App() {
    pdfjs.GlobalWorkerOptions.workerSrc =`//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
