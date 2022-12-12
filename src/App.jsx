@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.vite';
 import './App.css'
-import {useWindowSize} from './hooks/useWindowSize'
 
 export default function App() {
    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
    const [documentFields, setDocumentFields] = useState([]);
-   const size = useWindowSize()
 
    useEffect(() => {
       fetch('https://639335b5ab513e12c50722ff.mockapi.io/job')
@@ -22,8 +20,8 @@ export default function App() {
 
          <div className="pdf-wrapper" style={
             {
-               height:`${document.getElementsByClassName('react-pdf__Page__canvas')[0]?.clientHeight}px`,
-               width:`${document.getElementsByClassName('react-pdf__Page__canvas')[0]?.clientWidth}px`
+               height:'100vh',
+               width:`${document.getElementsByClassName('react-pdf__Page__canvas')[0]?.clientWidth}px` 
             }}>
             {documentFields.map((field, index) => {
                const { comboboxExtras } = field.options;
@@ -81,8 +79,8 @@ export default function App() {
                      </select>
                   );
             })}
-            <Document file="./pdf-test.pdf">
-               <Page height={size.height} pageNumber={1}></Page>
+            <Document className="pdf-document" file="./pdf-test.pdf">
+               <Page pageNumber={1}></Page>
             </Document>
          </div>
 
