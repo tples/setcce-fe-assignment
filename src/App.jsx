@@ -1,7 +1,9 @@
-import './App.css';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { Document, Page,pdfjs } from 'react-pdf/dist/esm/entry.vite';
+import Test from './components/test';
 
 export default function App() {
+   pdfjs.GlobalWorkerOptions.workerSrc =`//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
    const [documentFields, setDocumentFields] = useState([]);
 
    useEffect(() => {
@@ -13,7 +15,7 @@ export default function App() {
    }, []);
 
    return (
-      <>
+      <div style={{background: 'grey'}}>
          {documentFields.map((field, index) => {
             const { comboboxExtras } = field.options;
             const { fieldType } = field;
@@ -74,12 +76,9 @@ export default function App() {
                   </select>
                );
          })}
-
-         <object
-            style={{ height: '100vh', width: '100vw', position: 'relative' }}
-            data="./pdf-test.pdf#view=fit"
-            type="application/pdf"
-         ></object>
-      </>
+         <Document file="./pdf-test.pdf">
+            <Page  pageNumber={1}></Page>
+         </Document>
+      </div>
    );
 }
