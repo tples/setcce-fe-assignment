@@ -22,7 +22,7 @@ export default function App() {
 
          <div className="pdf-wrapper" style={
             {
-               height:`${document.getElementsByClassName('react-pdf__Page__canvas')[0]?.clientHeight}px`,
+               height:`100vh`,
                width:`${document.getElementsByClassName('react-pdf__Page__canvas')[0]?.clientWidth}px`
             }}>
             {documentFields.map((field, index) => {
@@ -82,7 +82,7 @@ export default function App() {
                   );
             })}
             <Document file="./pdf-test.pdf">
-               <Page height={size.height} pageNumber={1}></Page>
+               <Page height={document.getElementsByClassName('pdf-wrapper')[0]?.clientHeight} pageNumber={1}></Page>
             </Document>
          </div>
 
