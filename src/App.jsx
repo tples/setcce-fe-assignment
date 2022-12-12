@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf/dist/esm/entry.vite';
-import { useWindowSize } from './hooks/useWindowSize';
 import './App.css'
 
 export default function App() {
    pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
    const [documentFields, setDocumentFields] = useState([]);
-   const size = useWindowSize();
 
    useEffect(() => {
       fetch('https://639335b5ab513e12c50722ff.mockapi.io/job')
