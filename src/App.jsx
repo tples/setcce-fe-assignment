@@ -20,7 +20,11 @@ export default function App() {
    return (
       <section style={{backgroundColor: '#ccc'}}>
 
-         <div className="pdf-wrapper" >
+         <div className="pdf-wrapper" style={
+            {
+               height:`${document.getElementsByClassName('react-pdf__Page__canvas')[0]?.clientHeight}px`,
+               width:`${document.getElementsByClassName('react-pdf__Page__canvas')[0]?.clientWidth}px`
+            }}>
             {documentFields.map((field, index) => {
                const { comboboxExtras } = field.options;
                const { fieldType } = field;

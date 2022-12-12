@@ -1,7 +1,5 @@
 .pdf-wrapper {
    display: flex;
-   width: calc(100vh / 1.2945);
-   height: 100vh;
    position: relative;
    background: white;
    margin: auto
